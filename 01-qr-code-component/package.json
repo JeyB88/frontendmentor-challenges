@@ -1,0 +1,16 @@
+{
+  "name": "01-qr-code-component",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "compile:css": "tailwindcss -i ./tailwind.css -o ./css/style.css",
+    "compile:css:watch": "tailwindcss -i ./tailwind.css -o ./css/style.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "tailwindcss": "^3.4.5"
+  }
+}
