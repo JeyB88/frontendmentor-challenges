@@ -5,20 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="css/style.css">
   
   <title>Frontend Mentor | Social links profile</title>
 </head>
-<body>
+<body class="flex flex-col justify-center items-center min-h-screen">
 
-  Jessica Randall
-  London, United Kingdom
-  "Front-end developer and avid reader."
-
-  GitHub
-  Frontend Mentor
-  LinkedIn
-  Twitter
-  Instagram
+  <main>
+    <div class="social-links-profile text-gray-200 w-[32.5rem] space-y-[2rem] p-2.5 rounded-3xl bg-neutral-dark-grey">
+      <div class="profile text-center flex flex-col space-y-[2rem] items-center">
+        <div class="avatar h-9 w-9 rounded-full overflow-hidden">
+          <img src="assets/images/avatar-jessica.jpeg" alt="Jessica Randall Avatar" class="avatar__image object-cover w-full">
+        </div>
+        <div class="person space-y-[.5rem]">
+          <h3 class="person__name text-4xl tracking-wide">Jessica Randall</h3>
+          <span class="person__location font-semibold text-primary inline-block">London, United Kingdom</span>
+        </div>
+        <div class="profile__slogan text-gray-400">
+          "Front-end developer and avid reader."
+        </div>
+      </div>
+      <nav class="social-links">
+        <ul class="link-list list-none font-bold space-y-[1.25rem]">
+          <li class="link-list__item"><a href="#" class="link-list__link block bg-neutral-grey text-center rounded-xl py-1.5 hover:bg-primary hover:text-neutral-grey transition-colors">GitHub</a></li>
+          <li class="link-list__item"><a href="#" class="link-list__link block bg-neutral-grey text-center rounded-xl py-1.5 hover:bg-primary hover:text-neutral-grey transition-colors">Frontend Mentor</a></li>
+          <li class="link-list__item"><a href="#" class="link-list__link block bg-neutral-grey text-center rounded-xl py-1.5 hover:bg-primary hover:text-neutral-grey transition-colors">LinkedIn</a></li>
+          <li class="link-list__item"><a href="#" class="link-list__link block bg-neutral-grey text-center rounded-xl py-1.5 hover:bg-primary hover:text-neutral-grey transition-colors">Twitter</a></li>
+          <li class="link-list__item"><a href="#" class="link-list__link block bg-neutral-grey text-center rounded-xl py-1.5 hover:bg-primary hover:text-neutral-grey transition-colors">Instagram</a></li>
+        </ul>
+      </nav>
+    </div>
+  </main>
   
   
   <footer>

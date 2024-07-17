@@ -4,16 +4,36 @@
 
 @layer base {
 
+    @font-face {
+        font-family: Inter;
+        src: url(../assets/fonts/static/Inter-Regular.ttf);
+        font-weight: 400;
+    }
+
+    @font-face {
+        font-family: Inter;
+        src: url(../assets/fonts/static/Inter-SemiBold.ttf);
+        font-weight: 600;
+    }
+
+    @font-face {
+        font-family: Inter;
+        src: url(../assets/fonts/static/Inter-Bold.ttf);
+        font-weight: 700;
+    }
+
     html {
         font-size: 62.5%;
     }
 
     body {
-        
+        font-family: Inter, sans-serif;
+        @apply text-neutral-dark-grey;
+        @apply text-[1.4rem];
+        @apply bg-neutral-off-black;
     }
 }
 
 @layer components {
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { @apply text-gray-600; }
+    .attribution { font-size: 1.1rem; text-align: center; @apply text-gray-200; }
 }

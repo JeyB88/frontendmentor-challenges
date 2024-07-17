@@ -28,9 +28,10 @@ module.exports = {
     },
     extend: {
       colors: {
-        "primary": "#f4d04e",
-        "neutral-grey": "#808080",
-        "neutral-black": "#121212"
+        "primary": "#c5f82a",
+        "neutral-grey": "#333333",
+        "neutral-dark-grey": "#1f1f1f",
+        "neutral-off-black": "#141414"
       }
     },
   },
