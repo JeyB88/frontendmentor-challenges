@@ -595,6 +595,10 @@ body {
   margin-top: 2.2rem;
 }
 
+.mt-\[2\.5rem\] {
+  margin-top: 2.5rem;
+}
+
 .flex {
   display: flex;
 }
