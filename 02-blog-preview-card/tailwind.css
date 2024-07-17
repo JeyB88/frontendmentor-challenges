@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+    @font-face {
+        font-family: Figtree;
+        src: url(../assets/fonts/static/Figtree-SemiBold.tff);
+        font-weight: 500;
+    }
+
+    @font-face {
+        font-family: Figtree;
+        src: url(../assets/fonts/static/Figtree-ExtraBold.tff);
+        font-weight: 800;
+    }
+
+    html {
+        font-size: 62.5%;
+    }
+
+    body {
+        @apply bg-primary;
+        font-family: "Figtree", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 500;
+    }
+}
+
+@layer components {
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { @apply text-gray-600; }
+}
