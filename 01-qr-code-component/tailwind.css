@@ -16,5 +16,5 @@
 
 @layer components {
     .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    .attribution a { @apply text-gray-600; }
 }
