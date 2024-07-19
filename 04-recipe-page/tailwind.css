@@ -8,7 +8,61 @@
         font-size: 62.5%;
     }
 
-    body {}
+    @font-face {
+        font-family: 'Young Serif';
+        font-weight: 400;
+        src: url(../assets/fonts/young-serif/YoungSerif-Regular.ttf);
+    }
+
+    @font-face {
+        font-family: Outfit;
+        src: url(../assets/fonts/outfit/Outfit-VariableFont_wght.ttf);
+    }
+
+    body {
+        @apply bg-stone-100;
+        @apply text-stone-900;
+        font-family: 'Outfit';
+        font-size: 1.6rem;
+    }
+
+    h1, h2 {
+        font-family: 'Young Serif';
+    }
+
+    h1 {
+        @apply text-5xl;
+    }
+
+    h2 {
+        @apply text-4xl;
+        @apply text-brown-800;
+        @apply mb-2;
+        @apply leading-relaxed;
+        @apply font-semibold;
+    }
+
+    h3 {
+        @apply text-[1.8rem];
+        @apply font-semibold;
+    }
+
+    p {
+        @apply text-stone-600;
+        @apply leading-relaxed;
+    }
+
+    ul, ol {
+        @apply pt-1 text-2xl space-y-[1rem];
+    }
+
+    section {
+        @apply mx-3 pt-2 pb-4 md:mx-0;
+    }
+
+    section:not(:last-child) {
+        @apply border-b border-b-stone-150;
+    }
 }
 
 @layer components {

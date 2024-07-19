@@ -27,7 +27,15 @@ module.exports = {
       10: '10rem'
     },
     extend: {
-      colors: {}
+      colors: {
+        "stone-100": "#f3e6d8",
+        "stone-150": "#e4ded8",
+        "stone-600": "#5f574e",
+        "stone-900": "#302d2c",
+        "brown-800": "#854632",
+        "rose-800": "#7b284f",
+        "rose-50": "#fff5fa"
+      },
     },
   },
   plugins: [],

@@ -10,9 +10,6 @@ The designs were created to the following widths:
 > 💡 These are just the design sizes. Ensure content is responsive and meets WCAG requirements by testing the full range of screen sizes from 320px to large screens.
 
 ## Colors
-
-- White: hsl(0, 0%, 100%)
-
 - Stone 100: hsl(30, 54%, 90%)
 - Stone 150: hsl(30, 18%, 87%)
 - Stone 600: hsl(30, 10%, 34%)
