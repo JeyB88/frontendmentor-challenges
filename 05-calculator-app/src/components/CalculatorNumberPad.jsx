@@ -1,14 +1,15 @@
 import Button from "./Button";
 
-export default function CalculatorNumberPad() {
+export default function CalculatorNumberPad({ className }) {
   return (
-    <div className="calculator-number-pad 
-    bg-[#181f32] text-white 
-    rounded-md grid grid-cols-4 grid-rows-5 gap-4 p-4">
+    <div
+      className={`${className} calculator-number-pad 
+    rounded-md grid grid-cols-4 grid-rows-5 gap-4 p-4 transition-colors`}
+    >
       <Button>7</Button>
       <Button>8</Button>
       <Button>9</Button>
-      <Button color="#fff" backgroundColor="#647299">DEL</Button>
+      <Button type="command">del</Button>
 
       <Button>4</Button>
       <Button>5</Button>
@@ -25,10 +26,12 @@ export default function CalculatorNumberPad() {
       <Button>/</Button>
       <Button>x</Button>
 
-      <Button>&nbsp;</Button>
-      <Button>&nbsp;</Button>
-      <Button>&nbsp;</Button>
-      <Button>&nbsp;</Button>
+      <Button type="command" className="col-span-2">
+        reset
+      </Button>
+      <Button type="equal" className="col-span-2">
+        =
+      </Button>
     </div>
   );
 }

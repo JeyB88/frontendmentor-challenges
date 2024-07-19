@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @layer base {
     body {
         font-family: "League Spartan", sans-serif;
         font-weight: 700;
-        background-color: #3b4664;
     }
 }
