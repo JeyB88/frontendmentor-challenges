@@ -23,59 +23,63 @@ const numberPadStyles = {
 };
 
 function reducer(state, { type, payload }) {
+  const lastCharacter = state.value[state.value.length - 1];
+  let lastIsNumber = state.lastIsNumber;
+  if (lastCharacter) {
+    lastIsNumber = !Number.isNaN(parseInt(lastCharacter));
+  }
+  const tempState = {...state, isResult: false, lastIsNumber};
   switch (type) {
     case "add":
       return {
-        ...state,
-        isResult: false,
-        value: state.value.length ? state.value + "+" : "",
+        ...tempState,
+        value: lastIsNumber ? tempState.value + "+" : tempState.value,
       };
     case "subtract":
       return {
-        ...state,
-        isResult: false,
-        value: state.value.length ? state.value + "-" : "",
+        ...tempState,
+        value: lastIsNumber || tempState.value.length == 0 ? tempState.value + "-" : tempState.value,
       };
     case "divide":
       return {
-        ...state,
-        isResult: false,
-        value: state.value.length ? state.value + "/" : "",
+        ...tempState,
+        value: lastIsNumber ? tempState.value + "/" : tempState.value,
       };
     case "multiply":
       return {
-        ...state,
-        isResult: false,
-        value: state.value.length ? state.value + "x" : "",
+        ...tempState,
+        value: lastIsNumber ? tempState.value + "x" : tempState.value,
       };
     case "delete":
       return {
-        ...state,
-        isResult: false,
-        value: state.value.length
-          ? state.value.substring(0, state.value.length - 1)
-          : "",
+        ...tempState,
+        value: tempState.value.length
+          ? tempState.value.substring(0, tempState.value.length - 1)
+          : tempState.value,
       };
     case "reset":
-      return { ...state, isResult: false, value: "" };
+      return { ...tempState, value: "" };
     case "result":
-      return { ...state, isResult: true, value: eval(state.value) };
+      try {
+        const result = eval(tempState.value.replace("x", "*"));
+        if (Number.isNaN(result) || !Number.isFinite(result)) {
+          throw new Error();
+        }
+        return { ...tempState, value: result, isResult: true };
+      } catch {
+        return { ...tempState, value: tempState.value };
+      }
     case "dot":
-      const lastDotIndex = state.value.indexOf(".");
-      const isNumberBefore = state.value.length && !Number.isNaN(state.value[lastDotIndex - 1]);
-      console.log(lastDotIndex, isNumberBefore);
       return {
-        ...state,
-        isResult: false,
-        value: lastDotIndex != -1 || isNumberBefore ? state.value + "." : state.value,
+        ...tempState,
+        value: lastIsNumber ? tempState.value + "." : tempState.value,
       };
     case "num":
       return {
-        ...state,
-        isResult: false,
+        ...tempState,
         value: state.isResult
           ? "" + payload
-          : `${state.value}${payload}`,
+          : `${tempState.value}${payload}`,
       };
     default:
       throw new Error(`unsupported action ${type}!`);
@@ -85,6 +89,7 @@ function reducer(state, { type, payload }) {
 const initialState = {
   value: "",
   isResult: false,
+  lastIsNumber: false
 };
 
 export default function Calculator() {
