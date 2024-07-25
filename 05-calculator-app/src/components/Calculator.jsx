@@ -120,7 +120,7 @@ export default function Calculator() {
   }, [theme]);
 
   return (
-    <div className={`calculator w-[25rem] space-y-[1rem] ${commonStyles[theme]}`}>
+    <div className={`calculator w-[18rem] sm:w-[25rem] space-y-[1rem] ${commonStyles[theme]}`}>
       <CalculatorOptions />
       <CalculatorDisplay
         value={state.value}
