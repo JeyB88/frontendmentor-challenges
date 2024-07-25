@@ -10,6 +10,12 @@ const mainColorVariants = {
   t3: "bg-main-background-t3",
 };
 
+const commonStyles = {
+  t1: "text-text-default-t1",
+  t2: "text-text-default-t2",
+  t3: "text-text-default-t3"
+}
+
 const displayStyles = {
   t1: "bg-screen-background-t1 text-white",
   t2: "bg-screen-background-t2",
@@ -114,7 +120,7 @@ export default function Calculator() {
   }, [theme]);
 
   return (
-    <div className="calculator w-[25rem] space-y-[1rem]">
+    <div className={`calculator w-[25rem] space-y-[1rem] ${commonStyles[theme]}`}>
       <CalculatorOptions />
       <CalculatorDisplay
         value={state.value}

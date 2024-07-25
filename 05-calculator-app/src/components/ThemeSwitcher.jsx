@@ -20,7 +20,7 @@ export default function ThemeSwitcher() {
 
     return (
         <div className="theme-switcher flex items-end space-x-[1.5rem]">
-            <span className="uppercase font-thin text-xs text-white" >Theme</span>
+            <span className="uppercase font-thin text-xs" >Theme</span>
             <Toggle onChange={handleToggleChange} />
         </div>
     );
